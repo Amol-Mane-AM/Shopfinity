@@ -35,7 +35,8 @@ Shopfinity/
 ---
 ## Image
  
-
+![Shopfinity Demo](./public/Screenshot%20(249).png)
+![Shopfinity Demo](./public/Screenshot%20(250).png)
 
 ---
 
