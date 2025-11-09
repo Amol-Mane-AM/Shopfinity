@@ -1,0 +1,130 @@
+
+.category-button {
+  width: 100%;
+  border: none;
+  background: #fff;
+  padding: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 3px 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.category-button img {
+  width: 180px;
+  height: 60px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.category-button small {
+  display: block;
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+/* Hover Animation */
+.category-button:hover img {
+  transform: scale(1.15);
+}
+
+.category-button:hover {
+  transform: translateY(-4px);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+}
+
+/* Click / Selected Animation */
+.category-button.selected {
+  background: linear-gradient(135deg, #ff7b28, #ffa756);
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: rgba(255, 136, 0, 0.4) 0px 6px 20px;
+}
+
+.category-button.selected img {
+  filter: brightness(1.2);
+}
+
+/* Ripple Effect */
+.category-button:active::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: rgba(255, 255, 255, 0.6);
+  animation: ripple 0.4s ease-out;
+}
+
+@keyframes ripple {
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
+
+
+
+
+
+.dynamic-bg {
+  position: relative;
+  padding: 45px;
+  border-radius: 18px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* Animated wave gradient */
+.dynamic-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(130deg, #ff8c2b, #ffb703, #2196f3, #8b5cf6);
+  background-size: 400% 400%;
+  animation: gradientWave 9s ease infinite;
+  z-index: -2;
+  opacity: 0.9;
+}
+
+/* Glass layer */
+.dynamic-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(14px);
+  z-index: -1;
+  border-radius: 20px;
+}
+
+@keyframes gradientWave {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.dynamic-bg::before,
+.dynamic-bg::after {
+  pointer-events: none;
+}
+
+.dynamic-bg spand {
+  position: absolute;
+  background: rgba(255,255,255,0.8);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  animation: floatBubble 8s linear infinite;
+}
+
+@keyframes floatBubble {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-120px) scale(0.5); opacity: 0; }
+}

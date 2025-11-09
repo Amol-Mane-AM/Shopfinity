@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "active": 1,
+      
+    "imageName": "Men Fashion",
+    "imageUrl": "https://images.pexels.com/photos/842811/pexels-photo-842811.jpeg",
+    "name": "Men Fashion"
+  },
+  {
+    "id": 2,
+    "active": 1,
+    "imageName": "Women Fashion",
+    "imageUrl": "https://thumbs.dreamstime.com/b/beautiful-elegant-young-model-red-lips-color-evening-make-up-woman-face-dark-background-picture-taken-studio-70625823.jpg",
+    "name": "Women Fashion"
+  },
+  {
+    "id": 3,
+    "active": 1,
+    "imageName": "Electronics",
+    "imageUrl": "https://t4.ftcdn.net/jpg/03/64/41/07/360_F_364410756_Ev3WoDfNyxO9c9n4tYIsU5YBQWAP3UF8.jpg",
+    "name": "Electronics"
+  },
+  {
+    "id": 4,
+    "active": 1,
+    "imageName": "Footwear",
+    "imageUrl": "https://plus.unsplash.com/premium_photo-1682435561654-20d84cef00eb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2hvZXN8ZW58MHx8MHx8fDA%3D&fm=jpg&q=60&w=3000",
+    "name": "Footwear"
+  },
+  {
+    "id": 5,
+   "active": 1,
+    "imageName": "Accessories",
+    "imageUrl": "https://images.pexels.com/photos/322207/pexels-photo-322207.jpeg",
+    "name": "Accessories"
+  }
+]

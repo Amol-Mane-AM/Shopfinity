@@ -1,0 +1,130 @@
+body {
+  overflow-x: hidden;
+}
+
+/* --- Background Gradient --- */
+.about-wrapper {
+  min-height: 100vh;
+  padding-bottom: 80px;
+  background: linear-gradient(115deg, #ff8b2b, #ffa95d, #2d81ff, #662dff);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  position: relative;
+}
+
+/* Floating Gradient Orbs */
+.orb {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.6;
+  animation: float 8s infinite ease-in-out alternate;
+}
+.orb1 { background: #ff7b2f; top: 10%; left: 5%; }
+.orb2 { background: #2d7dff; bottom: 12%; right: 10%; animation-delay: 2s; }
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-40px); }
+}
+
+/* Hero */
+.hero-section {
+  text-align: center;
+  padding: 110px 15px 50px;
+  color: #fff;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+}
+.hero-title span {
+  background: linear-gradient(to right, #fff, #ffe8b5);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-sub {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  opacity: 0.95;
+}
+
+/* Stats */
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 25px 0;
+}
+.stat-box {
+  text-align: center;
+  color: #fff;
+}
+.stat-box h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+/* Cards Grid */
+.about-grid {
+  display: grid;
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* Glass Cards */
+.glass-card {
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(14px);
+  border-radius: 16px;
+  padding: 20px;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.22);
+  animation: fadeUp 1s ease;
+  transition: 0.3s ease;
+}
+.glass-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 35px rgba(0,0,0,0.2);
+}
+
+/* End */
+.end-text {
+  text-align: center;
+  margin-top: 35px;
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Animations */
+@keyframes gradientMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
