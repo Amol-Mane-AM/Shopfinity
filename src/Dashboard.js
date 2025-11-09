@@ -6,6 +6,7 @@ import { useAuth } from "./AuthContext";
 import { useNavigate } from "react-router-dom";
 import Search from "./Search";
 import categoryData from "./Datafile/categories.json";
+import productData from "./Datafile/products.json";
 
 function Dashboard() {
   const { isLoggedIn, userId, username } = useAuth();
@@ -26,25 +27,39 @@ function Dashboard() {
     fetchCategories();
   }, [isLoggedIn, userId, navigate]);
 
-  const fetchProducts = () => {
-    setLoading(true);
-    axios
-      .get("http://localhost:8080/admin/products")
-      .then((res) => {
-        const filtered = res.data.filter(p => p.active && p.category?.active);
-        const mapped = filtered.map((product) => ({
-          ...product,
-          imageUrl: product.imageUrl || "",
-        }));
-        setProducts(mapped);
-        setOriginalProducts(mapped);
-      })
-      .catch((err) => {
-        console.error("Error loading products:", err);
-        alert("Failed to load products.");
-      })
-      .finally(() => setLoading(false));
-  };
+
+  // const fetchProducts = () => {
+  //   setLoading(true);
+  //   axios
+  //     .get("http://localhost:8080/admin/products")
+  //     .then((res) => {
+  //       const filtered = res.data.filter(p => p.active && p.category?.active);
+  //       const mapped = filtered.map((product) => ({
+  //         ...product,
+  //         imageUrl: product.imageUrl || "",
+  //       }));
+  //       setProducts(mapped);
+  //       setOriginalProducts(mapped);
+  //     })
+  //     .catch((err) => {
+  //       console.error("Error loading products:", err);
+  //       alert("Failed to load products.");
+  //     })
+  //     .finally(() => setLoading(false));
+  // };
+const fetchProducts = () => {
+  setLoading(true);
+  
+  try {
+    setProducts(productData);
+    setOriginalProducts(productData);
+  } catch (err) {
+    console.error("Error loading local products:", err);
+    alert("Failed to load local products.");
+  } finally {
+    setLoading(false);
+  }
+};
 
  
   
