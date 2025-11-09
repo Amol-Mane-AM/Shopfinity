@@ -33,6 +33,10 @@ Shopfinity/
 - **Deployment:** Vercel / Netlify (frontend), Render / Railway (backend)
 
 ---
+## Image
+![Shopfinity Demo](public/Screenshot (249).png)
+
+---
 
 ## Getting Started
 
@@ -43,9 +47,5 @@ cd frontend
 npm install
 npm start
 
----
-
-### **Getting Started**
-
- ![Shopfinity Demo](public/Screenshot (249).png)
+ 
 
