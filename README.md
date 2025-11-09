@@ -42,7 +42,10 @@ Shopfinity/
 cd frontend
 npm install
 npm start
-### Image
+
+---
+
+### **Getting Started**
 
  ![Shopfinity Demo](public/Screenshot (249).png)
 
