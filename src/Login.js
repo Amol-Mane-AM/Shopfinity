@@ -19,10 +19,40 @@ function Login() {
     setError('');
     setLoading(true);
 
+    setUser({ email: "", password: "" });
+    // ✅ Static login users
+    const staticUsers = [
+      { username: "admin", email: "admin@gmail.com", password: "admin123", role: "admin", id: 1 },
+      { username: "amol", email: "amol@gmail.com", password: "amol123", role: "user", id: 2 }
+    ];
+// ✅ find matching user
+    const loggedInUser = staticUsers.find(
+      u => u.email === user.email && u.password === user.password
+    );
+    if (loggedInUser) {
+      localStorage.setItem('token', 'true');
+      localStorage.setItem('username', loggedInUser.username);
+      localStorage.setItem('userId', String(loggedInUser.id));
+
+      setIsLoggedIn(true);
+      setUsername(loggedInUser.username);
+      setUserId(loggedInUser.id);
+
+      setLoading(false);
+      if (loggedInUser.role === 'admin') {
+        navigate('/admin/dashboard');
+      } else {
+        navigate(`/dash/${loggedInUser.username}`);
+      }
+      return;
+    }
+
+    // If no static user matched, proceed with API login
+
     try {
       const res = await axios.post('http://localhost:8080/user/login', user, { withCredentials: true });
       const { username, id, token } = res?.data || {};
-
+debugger;
       if (username && id !== undefined) {
         localStorage.setItem('token', token || 'true');
         localStorage.setItem('username', username);
