@@ -143,7 +143,7 @@ const filterByCategory = async (categoryName) => {
 
 
    <div className="container mt-5" >
-  <h2 className="text-center">Welcome to Shopfinity!</h2>
+  <h2 className="text-center">Welcome to AM Shopfinity!</h2>
 
       {/* Category List */}
      
